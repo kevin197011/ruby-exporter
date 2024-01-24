@@ -6,4 +6,5 @@ RUN bundle install
 
 EXPOSE 9292
 
-CMD ["bundle", "exec", "unicorn", "-p", "9292", "-c", "unicorn.conf"]
+# CMD ["bundle", "exec", "unicorn", "-p", "9292", "-c", "unicorn.conf"]
+ENTRYPOINT ["/bin/bash", "bootstrap.sh"]
