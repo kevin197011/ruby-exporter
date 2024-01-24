@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 task default: %w[push]
 
 task :push do
