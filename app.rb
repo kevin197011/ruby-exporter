@@ -7,7 +7,7 @@ require 'prometheus/client/formats/text'
 require_relative 'metrics'
 
 # class
-class Application < Sinatra::Base
+class App < Sinatra::Base
   get '/' do
     "<h1>Customized Exporter</h1></br><a href='metrics'>Metrics</a>"
   end
