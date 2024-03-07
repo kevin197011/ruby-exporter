@@ -15,8 +15,8 @@ class Application < Sinatra::Base
   get '/metrics', provides: 'text/plain' do
     Prometheus::Client.registry.gauge(:devops_test_metrics, docstring: 'test', labels: [:project])
     gauge = Prometheus::Client.registry.get(:devops_test_metrics)
-    gauge_value = Metrics.new.values
-    gauge.set(gauge_value, labels: { project: 'project_101' })
+    metrics_value = Metrics.new.values
+    gauge.set(metrics_value, labels: { project: 'project_101' })
     Prometheus::Client::Formats::Text.marshal(Prometheus::Client.registry)
   end
 end
