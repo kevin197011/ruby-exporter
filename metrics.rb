@@ -7,9 +7,8 @@ class Metrics
   end
 
   private
-  
+
   def config
     YAML.load_file('config.yml')
   end
-
 end
