@@ -9,8 +9,8 @@ require_relative 'metrics'
 # class
 class App < Sinatra::Base
 
-  Prometheus::Client.registry.gauge(:devops_test_metrics, docstring: 'test', labels: [:project])
-  
+  Prometheus::Client.registry.gauge(:devops_test_metrics, docstring: 'test', labels: %i[project])
+
   get '/' do
     "<h1>Customized Exporter</h1></br><a href='metrics'>Metrics</a>"
   end
